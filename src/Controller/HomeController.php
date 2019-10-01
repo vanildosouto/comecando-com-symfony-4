@@ -2,23 +2,14 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController
+class HomeController extends AbstractController
 {
     public function __invoke()
     {
-        return new Response('
-<html>
-    <body>
-        <h1 class="title">Meus Jogos</h1>
-        <ul>
-            <li>Super Mario World - Novo</li>
-            <li></li>
-            <li></li>
-        </ul>
-    </body>
-</html>
-');
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
     }
 }
